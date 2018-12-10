@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="centerpane" prefHeight="475.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CadastroUsuarioController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.7571428571428571" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#087ab6" height="475.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <Label fx:id="titulo" layoutX="94.0" layoutY="10.0" text="Cadastro de Usuários" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tx_codigo" alignment="CENTER" layoutX="165.0" layoutY="93.0" onAction="#carregaUsuario" prefHeight="38.0" prefWidth="211.0" promptText="Código">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="167.0" layoutY="198.0" text="Nome">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tx_nome" layoutX="165.0" layoutY="239.0" promptText="Nome">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="167.0" layoutY="301.0" text="Senha">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tx_senha" layoutX="165.0" layoutY="338.0" promptText="Senha">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/user1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="661.0" layoutY="84.0" text="Permissões">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="user_cbox" layoutX="546.0" layoutY="149.0" mnemonicParsing="false" text="Cadastro de Usuários e Preferências">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="animal_cbox" layoutX="546.0" layoutY="185.0" mnemonicParsing="false" text="Módulo Animal">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="saude_cbox" layoutX="546.0" layoutY="221.0" mnemonicParsing="false" text="Módulo Saúde">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="financ_cbox" layoutX="546.0" layoutY="257.0" mnemonicParsing="false" text="Módulo Financeiro">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="prod_cbox" layoutX="546.0" layoutY="293.0" mnemonicParsing="false" text="Módulo Produção">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="reprod_cbox" layoutX="546.0" layoutY="328.0" mnemonicParsing="false" text="Módulo Reprodução">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="alim_cbox" layoutX="546.0" layoutY="363.0" mnemonicParsing="false" text="Módulo Alimentação">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="bt_salvar" layoutX="906.0" layoutY="7.0" mnemonicParsing="false" onAction="#salvaUsuario" prefHeight="56.0" prefWidth="87.0" style="-fx-background-color: WHITE;">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/ok.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="bt_excluir" layoutX="815.0" layoutY="7.0" mnemonicParsing="false" onAction="#apagaUsuario" prefHeight="56.0" prefWidth="87.0" style="-fx-background-color: WHITE;" textFill="#e80000">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/del.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="724.0" layoutY="7.0" mnemonicParsing="false" onAction="#limpaTela" onKeyPressed="#salvaUsuario" prefHeight="56.0" prefWidth="87.0" style="-fx-background-color: WHITE;">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/error.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Separator layoutX="475.0" layoutY="83.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="22.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneprincipal" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.RendimentoIndividualController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="94.0" layoutY="10.0" text="Rendimento por Animal" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/prod.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="661.0" layoutY="76.0" orientation="VERTICAL" prefHeight="593.0" prefWidth="7.0" />
+      <TableView fx:id="tabela" layoutX="672.0" layoutY="76.0" prefHeight="527.0" prefWidth="321.0">
+        <columns>
+          <TableColumn fx:id="data_col" prefWidth="153.0" text="Data" />
+          <TableColumn fx:id="litro_col" prefWidth="160.0" text="Litragem" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="inicial_dp" layoutX="164.0" layoutY="85.0" prefHeight="35.0" prefWidth="154.0" />
+      <DatePicker fx:id="final_dp" layoutX="164.0" layoutY="136.0" prefHeight="35.0" prefWidth="154.0" />
+      <TextField fx:id="cod_tx" layoutX="474.0" layoutY="85.0" onAction="#carrega" prefHeight="17.0" prefWidth="165.0" promptText="...">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="carregar_bt" layoutX="540.0" layoutY="136.0" mnemonicParsing="false" onAction="#carrega" prefHeight="35.0" prefWidth="99.0" style="-fx-body-color: #353535;" text="Carregar" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="limpar_bt" layoutX="431.0" layoutY="136.0" mnemonicParsing="false" onAction="#limpa" prefHeight="35.0" prefWidth="99.0" style="-fx-body-color: #353535;" text="Limpar" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="395.0" layoutY="88.0" text="Animal">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="18.0" layoutY="178.0" prefHeight="15.0" prefWidth="637.0" />
+      <TextField fx:id="menorg_tx" editable="false" layoutX="84.0" layoutY="522.0" prefHeight="35.0" prefWidth="186.0" promptText="...." />
+      <Label layoutX="32.0" layoutY="88.0" text="Data Inicial">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="139.0" text="Data Final">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="493.0" text="Menor produção" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mdg_tx" alignment="CENTER" editable="false" layoutX="94.0" layoutY="599.0" prefHeight="17.0" prefWidth="165.0" promptText="00%">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="108.0" layoutY="570.0" text="Média diária" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="menorn_tx" editable="false" layoutX="421.0" layoutY="522.0" prefHeight="35.0" prefWidth="186.0" promptText="...">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="mdn_tx" alignment="CENTER" editable="false" layoutX="431.0" layoutY="599.0" prefHeight="17.0" prefWidth="165.0" promptText="00%">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="445.0" layoutY="570.0" text="Média diária" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="128.0" layoutY="267.0" text="Geral">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Separator layoutX="352.0" layoutY="298.0" orientation="VERTICAL" prefHeight="357.0" prefWidth="0.0" />
+      <Label layoutX="412.0" layoutY="267.0" text="No período">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nome_tx" alignment="CENTER" editable="false" layoutX="262.0" layoutY="203.0" prefHeight="35.0" prefWidth="186.0" promptText="..." style="-fx-background-color: #DDDDDD;">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tg_tx" alignment="CENTER" editable="false" layoutX="94.0" layoutY="358.0" prefHeight="17.0" prefWidth="165.0" promptText="00%">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="148.0" layoutY="327.0" text="Total" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tn_tx" alignment="CENTER" editable="false" layoutX="431.0" layoutY="356.0" prefHeight="17.0" prefWidth="165.0" promptText="00%">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="485.0" layoutY="325.0" text="Total" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="maiorg_tx" editable="false" layoutX="84.0" layoutY="435.0" prefHeight="35.0" prefWidth="186.0" promptText="...">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="88.0" layoutY="406.0" text="Maior produção" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="maiorn_tx" editable="false" layoutX="421.0" layoutY="435.0" prefHeight="35.0" prefWidth="186.0" promptText="...">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="421.0" layoutY="493.0" text="Menor produção" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="426.0" layoutY="406.0" text="Maior produção" textFill="#757575">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="abaixo_bt" layoutX="675.0" layoutY="610.0" mnemonicParsing="false" onAction="#abaixoMedia" prefHeight="48.0" prefWidth="99.0" style="-fx-body-color: #353535;" text="Abaixo da média" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="acima_bt" layoutX="784.0" layoutY="610.0" mnemonicParsing="false" onAction="#acimaMedia" prefHeight="48.0" prefWidth="99.0" style="-fx-body-color: #353535;" text="Acima da média" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="tudo_bt" layoutX="892.0" layoutY="610.0" mnemonicParsing="false" onAction="#tudo" prefHeight="48.0" prefWidth="99.0" style="-fx-body-color: #353535;" text="Tudo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#007eff" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+   </children>
+</AnchorPane>

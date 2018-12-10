@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneprincipal" prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CadastroAlimentoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="540.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#232323" />
+                  <Stop color="#383838" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Food.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="10.0" text="Cadastro de Alimento" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="101.0" text="Nome">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c5ff42" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <TextField fx:id="nome_tx" layoutX="220.0" layoutY="100.0" prefHeight="42.0" prefWidth="268.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="tipo_combo" layoutX="220.0" layoutY="152.0" prefHeight="42.0" prefWidth="268.0" promptText="Selecione" />
+      <ComboBox fx:id="unid_combo" layoutX="220.0" layoutY="213.0" prefHeight="42.0" prefWidth="268.0" promptText="Selecione" />
+      <Button layoutX="371.0" layoutY="293.0" mnemonicParsing="false" onAction="#salvar" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #343434;" text="Salvar" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="246.0" layoutY="293.0" mnemonicParsing="false" onAction="#limpar" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #343434;" text="Limpar" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="48.0" layoutY="293.0" mnemonicParsing="false" onAction="#estoque" prefHeight="68.0" prefWidth="184.0" style="-fx-background-color: #343434;" text="Estoque" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/estoque.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="142.0" layoutY="153.0" text="Tipo">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="214.0" text="Unidade">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

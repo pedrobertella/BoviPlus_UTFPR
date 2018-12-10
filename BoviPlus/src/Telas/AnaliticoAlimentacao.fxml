@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.AnaliticoAlimentacaoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#393939" height="610.0" layoutX="2.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="260.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Food.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c5ff42" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <Label layoutX="94.0" layoutY="10.0" text="Previsão de Estoque" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lista" layoutX="27.0" layoutY="71.0" prefHeight="600.0" prefWidth="222.0" style="-fx-background-color: #505050;" />
+      <LineChart fx:id="grafico" layoutX="269.0" layoutY="82.0" prefHeight="583.0" prefWidth="722.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xaxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yaxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

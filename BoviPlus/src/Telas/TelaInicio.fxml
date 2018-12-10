@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneprincipal" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.TelaInicioController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252525" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutX="643.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="358.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#087ab6" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <ImageView fitHeight="330.0" fitWidth="512.0" layoutX="84.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/LogoBigNegativo2.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="avisos_lv" layoutX="650.0" layoutY="69.0" prefHeight="606.0" prefWidth="350.0" style="-fx-background-color: #252525; -fx-background-insets: 0;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+      <Label layoutX="774.0" layoutY="10.0" text="Avisos" textFill="#464646">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="675.0" layoutX="641.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   </children>
+</AnchorPane>

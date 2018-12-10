@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CadastroVacinaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="379.0" layoutY="201.0" stroke="BLACK" strokeType="INSIDE" width="271.0" />
+      <Label fx:id="titulo_tela" layoutX="94.0" layoutY="10.0" text=" Cadastro de Vacina" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="icone_img" fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/saude.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="codigo_label" layoutX="293.0" layoutY="90.0" prefHeight="40.0" prefWidth="98.0" text="Código">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codigo_tx" layoutX="425.0" layoutY="89.0" onAction="#carregaVacina" prefHeight="25.0" prefWidth="178.0" promptText="0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button fx:id="listvacinas_bt" layoutX="746.0" layoutY="91.0" mnemonicParsing="false" onAction="#listVacinas" prefHeight="37.0" prefWidth="34.0" style="-fx-body-color: #353535;">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/list.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="carregar_bt" layoutX="614.0" layoutY="89.0" mnemonicParsing="false" onAction="#carregaVacina" prefHeight="42.0" prefWidth="124.0" text="Carregar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="nome_label" layoutX="306.0" layoutY="146.0" prefHeight="40.0" prefWidth="82.0" text="Nome">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nome_tx" layoutX="425.0" layoutY="145.0" prefHeight="25.0" prefWidth="178.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Label layoutX="389.0" layoutY="214.0" text="Tipo:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="extemp_rdbt" layoutX="440.0" layoutY="218.0" mnemonicParsing="false" onAction="#habilitaCampos" selected="true" text="Extemporânea">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="tipo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="periodica_rdbt" layoutX="555.0" layoutY="218.0" mnemonicParsing="false" onAction="#habilitaCampos" text="Periodica" toggleGroup="$tipo">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="camp_lbl" disable="true" layoutX="286.0" layoutY="280.0" text="Campanha:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="campanha_tx" disable="true" layoutX="410.0" layoutY="271.0" prefHeight="50.0" prefWidth="212.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+      <Label fx:id="cat_ali_lbl" disable="true" layoutX="327.0" layoutY="336.0" text="Categoria de Animais:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="cat_ani_tx" disable="true" layoutX="556.0" layoutY="327.0" prefHeight="50.0" prefWidth="212.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+      <Label fx:id="mes_lbl" disable="true" layoutX="647.0" layoutY="280.0" text="Mês:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="mes_combo" disable="true" layoutX="706.0" layoutY="284.0" prefWidth="150.0" />
+      <Label fx:id="indicacao_label" layoutX="287.0" layoutY="405.0" prefHeight="54.0" prefWidth="124.0" text="Indicação" textAlignment="RIGHT" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="indicacao_tx" layoutX="426.0" layoutY="397.0" prefHeight="70.0" prefWidth="398.0" promptText="Máximo 80 caracteres..." wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font></TextArea>
+      <Label fx:id="contraindic_label" layoutX="287.0" layoutY="468.0" prefHeight="93.0" prefWidth="124.0" text="Contra Indicação" textAlignment="RIGHT" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="contraindic_tx" layoutX="426.0" layoutY="480.0" prefHeight="70.0" prefWidth="398.0" promptText="Máximo 80 caracteres..." wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font></TextArea>
+      <ButtonBar fx:id="barradebotoes" layoutX="313.0" layoutY="587.0" prefHeight="42.0" prefWidth="383.0">
+         <buttons>
+            <Button fx:id="salvar_bt" mnemonicParsing="false" onAction="#salvaVacina" prefHeight="42.0" prefWidth="112.0" text="Salvar">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="limpar_bt" mnemonicParsing="false" onAction="#limpaTela" prefHeight="42.0" prefWidth="112.0" text="Limpar">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="excluir_bt" mnemonicParsing="false" onAction="#apagaVacina" prefHeight="39.0" prefWidth="124.0" text="Excluir">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2f4f" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+   </children>
+</AnchorPane>

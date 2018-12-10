@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="panejanela" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.ConsultaEnfermidadeController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="94.0" layoutY="10.0" text="Consulta de Enfermidades" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/saude.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tabela" layoutX="119.0" layoutY="83.0" prefHeight="578.0" prefWidth="763.0">
+         <columns>
+            <TableColumn fx:id="tc_cod_animal" prefWidth="130.39999389648438" text="Código Animal" />
+            <TableColumn fx:id="tc_cod_doenca" prefWidth="153.59999084472656" text="Código Doença" />
+            <TableColumn fx:id="tc_temp_car" prefWidth="156.79998779296875" text="Tempo de Carência" />
+            <TableColumn fx:id="tc_temp_trat" prefWidth="173.5999755859375" text="Tempo de Tratamento" />
+            <TableColumn fx:id="tc_data" prefWidth="149.5999755859375" text="Data" />
+         </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2f4f" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+   </children>
+</AnchorPane>

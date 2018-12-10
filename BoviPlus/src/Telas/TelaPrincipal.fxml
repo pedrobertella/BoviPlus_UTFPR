@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.TelaPrincipalController">
+   <top>
+      <Pane fx:id="toppane" prefHeight="29.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="barrademenu" prefHeight="29.0" prefWidth="1150.0">
+              <menus>
+                <Menu fx:id="menu_boviplus" mnemonicParsing="false" text="BoviPlus">
+                  <items>
+                        <MenuItem fx:id="mitem_inicio" mnemonicParsing="false" onAction="#telaInicial" text="Início" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_produtor" mnemonicParsing="false" onAction="#cadastroProdutor" text="Produtor" />
+                        <MenuItem fx:id="mitem_usuario" mnemonicParsing="false" onAction="#cadastroUsuario" text="Usuários do Sistema" />
+                        <MenuItem fx:id="mitem_bd" mnemonicParsing="false" onAction="#mostrarBDConect" text="Banco de Dados" />
+                        <MenuItem fx:id="preferencias" mnemonicParsing="false" onAction="#preferenciasSistema" text="Preferências" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_sair" mnemonicParsing="false" onAction="#fazerLogoff" text="Sair">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    <MenuItem fx:id="mitem_fechar" mnemonicParsing="false" onAction="#Fechar" text="Fechar">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                </Menu>
+                  <Menu fx:id="menu_animal" mnemonicParsing="false" text="Animal">
+                    <items>
+                      <MenuItem fx:id="mitem_cadastro_animal" mnemonicParsing="false" onAction="#cadastroAnimal" text="Cadastro" />
+                        <MenuItem fx:id="mitem_consulta_animal" mnemonicParsing="false" onAction="#consultaAnimal" text="Consulta" />
+                        <MenuItem mnemonicParsing="false" onAction="#racas" text="Raças" />
+                    </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                  <Menu fx:id="menu_saude" mnemonicParsing="false" text="Saúde">
+                    <items>
+                      <MenuItem fx:id="mitem_regvacina" mnemonicParsing="false" onAction="#cadastroVacina" text="Cadastro de Medicação" />
+                        <MenuItem fx:id="mitem_regdoença" mnemonicParsing="false" onAction="#cadastroEnfermidade" text="Registro de Enfermidade" />
+                        <MenuItem fx:id="mitem_cadastrodoenca" mnemonicParsing="false" onAction="#cadastroDoencas" text="Cadastro de Doenças" />
+                        <MenuItem fx:id="mitem_cadastroexame" mnemonicParsing="false" onAction="#cadastroExame" text="Cadastro de Exames" />
+                    </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                  <Menu fx:id="menu_financeiro" mnemonicParsing="false" text="Financeiro">
+                     <items>
+                        <MenuItem fx:id="mitem_contasreceber" mnemonicParsing="false" onAction="#contasReceber" text="Contas a receber" />
+                        <MenuItem fx:id="mitem_contaspagar" mnemonicParsing="false" onAction="#contasPagar" text="Contas a pagar" />
+                        <MenuItem fx:id="mitem_analitico_financeiro" mnemonicParsing="false" onAction="#analiticoFinanceiro" text="Analítico" />
+                     </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                  <Menu fx:id="menu_producao" mnemonicParsing="false" text="Produção">
+                    <items>
+                        <MenuItem fx:id="mitem_registrosimplificado" mnemonicParsing="false" onAction="#registroSimplificado" text="Registro simplificado" />
+                      <MenuItem fx:id="mitem_cadastro_producao" mnemonicParsing="false" onAction="#cadastroProducao" text="Registro em Lote" />
+                        <MenuItem fx:id="mitem_cadrapido" mnemonicParsing="false" onAction="#producaoRapido" text="Registro Rápido" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_consulta_producao" mnemonicParsing="false" onAction="#consultaProducao" text="Consulta" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_rendimento" mnemonicParsing="false" onAction="#rendimentoAnimal" text="Rendimento por Animal" />
+                        <MenuItem fx:id="mitem_rendimento_grupo" mnemonicParsing="false" onAction="#rendimentoGrupo" text="Rendimento por Grupo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_analitico_producao" mnemonicParsing="false" onAction="#analiticoProducao" text="Analítico" />
+                    </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                  <Menu fx:id="menu_reproducao" mnemonicParsing="false" text="Reprodução">
+                    <items>
+                      <MenuItem fx:id="mitem_registro_inseminacao" mnemonicParsing="false" onAction="#registroInseminacao" text="Registro de inseminação" />
+                        <MenuItem fx:id="mitem_acompanhamento_reproducao" mnemonicParsing="false" onAction="#acompanhamentoReproducao" text="Acompanhamento" />
+                    </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F6" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                <Menu fx:id="menu_alimentacao" mnemonicParsing="false" text="Alimentação">
+                  <items>
+                        <MenuItem fx:id="mitem_cadastro_alimentos" mnemonicParsing="false" onAction="#cadastroAlimento" text="Alimentos" />
+                        <MenuItem fx:id="mitem_analitico_alimentacao" mnemonicParsing="false" onAction="#analiticoAlimentacao" text="Previsão de Estoque" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mitem_consulta_alimentacao" mnemonicParsing="false" onAction="#consultaAlimentacao" text="Gerenciamento de Alimentações" />
+                  </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F7" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                </Menu>
+                <Menu fx:id="menu_ajuda" mnemonicParsing="false" text="Ajuda">
+                  <items>
+                        <MenuItem fx:id="mitem_manual" mnemonicParsing="false" onAction="#manualBoviplus" text="Manual">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    <MenuItem fx:id="mitem_sobre" mnemonicParsing="false" onAction="#mostrarSobre" text="Sobre" />
+                  </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F9" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane fx:id="centerpane" prefHeight="675.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <AnchorPane fx:id="leftpane" prefHeight="675.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252525" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb823" height="100.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <ImageView fx:id="vaca_img" fitHeight="82.0" fitWidth="102.0" layoutX="34.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/Cow.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#007eff" height="100.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <ImageView fx:id="prod_img" fitHeight="82.0" fitWidth="102.0" layoutX="34.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/prod.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff88ef" height="100.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <ImageView fx:id="insem_img" fitHeight="82.0" fitWidth="102.0" layoutX="34.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/insemi.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c5ff42" height="100.0" layoutY="412.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <ImageView fx:id="alim_img" fitHeight="82.0" fitWidth="102.0" layoutX="34.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/Food.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#51b848" height="100.0" layoutY="524.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+            <ImageView fx:id="conta_img" fitHeight="82.0" fitWidth="102.0" layoutX="34.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/conta.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop color="#252525" />
+                        <Stop color="#393939" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="84.0" layoutY="14.0" onMouseClicked="#telaInicial" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/home.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="user_lb" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="633.0" prefHeight="36.0" prefWidth="144.0" text="Usuário" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

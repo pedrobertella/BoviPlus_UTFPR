@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boviplus.dbcreator.UnicaTelaController">
+   <children>
+      <TextField fx:id="nome_lb" alignment="CENTER" layoutX="84.0" layoutY="294.0" onAction="#criaDB" text="bovidb">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="246.0" prefHeight="35.0" prefWidth="333.0" text="Nome do Banco de Dados" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="cria_bt" layoutX="100.0" layoutY="345.0" mnemonicParsing="false" onAction="#criaDB" prefHeight="44.0" prefWidth="192.0" style="-fx-background-color: #393939;" text="Criar" textFill="#04bf68">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Button>
+      <Separator layoutX="20.0" layoutY="227.0" prefHeight="13.0" prefWidth="361.0" />
+      <TextField fx:id="senha_tx" alignment="CENTER" layoutX="84.0" layoutY="125.0" onAction="#conectaBD">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="76.0" prefHeight="35.0" prefWidth="361.0" text="Senha do servidor PostgreSQL" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="conect_bt" layoutX="104.0" layoutY="175.0" mnemonicParsing="false" onAction="#conectaBD" prefHeight="41.0" prefWidth="192.0" style="-fx-background-color: #393939;" text="Conectar" textFill="#6eb2ff">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#303030" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@dbicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="165.0" layoutX="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LogoBigNegativo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.ControleFinanceiroController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#50b847" height="646.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/conta.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="10.0" text="Controle de Gastos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="inicio_dp" layoutX="85.0" layoutY="98.0" prefHeight="35.0" prefWidth="150.0" />
+      <Button fx:id="dias15_bt" layoutX="85.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias15" prefHeight="28.0" prefWidth="50.0" text="15" />
+      <Button fx:id="dias30_bt" layoutX="135.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias30" prefHeight="28.0" prefWidth="50.0" text="30" />
+      <Button fx:id="dias60_bt" layoutX="185.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias60" prefHeight="28.0" prefWidth="50.0" text="60" />
+      <DatePicker fx:id="fim_dp" layoutX="85.0" layoutY="173.0" prefHeight="35.0" prefWidth="150.0" />
+      <Button fx:id="hoje_bt" layoutX="85.0" layoutY="206.0" mnemonicParsing="false" onAction="#hjdp" prefHeight="28.0" prefWidth="150.0" text="Hoje" />
+      <Separator layoutX="250.0" layoutY="81.0" orientation="VERTICAL" prefHeight="561.0" prefWidth="21.0" />
+      <Label layoutX="23.0" layoutY="102.0" text="Início">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="177.0" text="Fim">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="260.0" text="Contas a pagar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="404.0" text="Contas a receber">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="ptodos_rbt" layoutX="44.0" layoutY="295.0" mnemonicParsing="false" selected="true" text="Todos">
+         <toggleGroup>
+            <ToggleGroup fx:id="pagarg" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="preprod_rbt" layoutX="44.0" layoutY="314.0" mnemonicParsing="false" text="Reprodução" toggleGroup="$pagarg" />
+      <RadioButton fx:id="palim_rbt" layoutX="44.0" layoutY="333.0" mnemonicParsing="false" text="Alimento" toggleGroup="$pagarg" />
+      <RadioButton fx:id="psaude_rbt" layoutX="44.0" layoutY="352.0" mnemonicParsing="false" text="Saúde" toggleGroup="$pagarg" />
+      <RadioButton fx:id="pgeral_rbt" layoutX="44.0" layoutY="371.0" mnemonicParsing="false" text="Outros" toggleGroup="$pagarg" />
+      <RadioButton fx:id="rtodos_rbt" layoutX="44.0" layoutY="439.0" mnemonicParsing="false" selected="true" text="Todos">
+         <toggleGroup>
+            <ToggleGroup fx:id="receberg" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rprod_rbt" layoutX="44.0" layoutY="458.0" mnemonicParsing="false" text="Produção" toggleGroup="$receberg" />
+      <RadioButton fx:id="rgeral_rbt" layoutX="44.0" layoutY="477.0" mnemonicParsing="false" text="Outros" toggleGroup="$receberg" />
+      <Button fx:id="carregar_bt" layoutX="88.0" layoutY="581.0" mnemonicParsing="false" onAction="#buscar" prefHeight="39.0" prefWidth="95.0" text="Carregar">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <PieChart fx:id="pagar_pie" layoutX="271.0" layoutY="82.0" onMouseClicked="#abrePagar" prefHeight="306.0" prefWidth="350.0" title="Contas a Pagar" />
+      <PieChart fx:id="receber_pie" layoutX="635.0" layoutY="82.0" onMouseClicked="#abreReceber" prefHeight="306.0" prefWidth="350.0" title="Contas a Receber" />
+      <TextField fx:id="ptotal_tx" alignment="CENTER" layoutX="372.0" layoutY="406.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="preprod_tx" alignment="CENTER" layoutX="372.0" layoutY="463.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="palim_tx" alignment="CENTER" layoutX="372.0" layoutY="501.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="psaude_tx" alignment="CENTER" layoutX="372.0" layoutY="540.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="pgeral_tx" alignment="CENTER" layoutX="372.0" layoutY="579.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="rtotal_tx" alignment="CENTER" layoutX="760.0" layoutY="407.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="rprod_tx" alignment="CENTER" layoutX="760.0" layoutY="464.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="rgeral_tx" alignment="CENTER" layoutX="760.0" layoutY="502.0" prefHeight="30.0" prefWidth="127.0" promptText="00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="324.0" layoutY="408.0" text="Total">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="271.0" layoutY="466.0" text="Reprodução">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="504.0" text="Alimento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="542.0" text="Saúde">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="311.0" layoutY="581.0" text="Outros">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="714.0" layoutY="408.0" text="Total">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="679.0" layoutY="466.0" text="Produção">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="697.0" layoutY="504.0" text="Outros">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

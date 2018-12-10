@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.ConsultaProducaoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/prod.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="10.0" text="Consulta de Produção" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="86.0" text="Período">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="inicial_dp" layoutX="115.0" layoutY="203.0" prefHeight="44.0" prefWidth="194.0" />
+      <Button fx:id="hojeinicial_bt" layoutX="321.0" layoutY="201.0" mnemonicParsing="false" onAction="#hojeInicial" text="Hoje">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="final_dp" layoutX="115.0" layoutY="288.0" prefHeight="44.0" prefWidth="194.0" />
+      <Button fx:id="hojefinal_bt" layoutX="322.0" layoutY="287.0" mnemonicParsing="false" onAction="#hojeFinal" text="Hoje">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="buscar_bt" layoutX="190.0" layoutY="344.0" mnemonicParsing="false" onAction="#buscar" prefHeight="48.0" prefWidth="139.0" text="Buscar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="dias30_bt" layoutX="61.0" layoutY="539.0" mnemonicParsing="false" onAction="#dias30" prefHeight="48.0" prefWidth="189.0" text="30 dias">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="meses3_bt" layoutX="61.0" layoutY="598.0" mnemonicParsing="false" onAction="#mes3" prefHeight="48.0" prefWidth="189.0" text="3 meses">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="meses6_bt" layoutX="271.0" layoutY="539.0" mnemonicParsing="false" onAction="#mes6" prefHeight="48.0" prefWidth="189.0" text="6 meses">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="ano1_bt" layoutX="271.0" layoutY="598.0" mnemonicParsing="false" onAction="#ano" prefHeight="48.0" prefWidth="189.0" text="1 ano">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="172.0" layoutY="168.0" text="Inicial:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="256.0" text="Final:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="total_tx" alignment="CENTER" editable="false" layoutX="180.0" layoutY="448.0" prefHeight="35.0" prefWidth="161.0" promptText="00.00">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </TextField>
+      <Label layoutX="233.0" layoutY="416.0" text="Total">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tabela" layoutX="521.0" layoutY="86.0" prefHeight="568.0" prefWidth="462.0">
+        <columns>
+          <TableColumn fx:id="cod_col" prefWidth="84.33331298828125" text="Codigo" />
+          <TableColumn fx:id="vaca_col" prefWidth="181.66668701171875" text="Vaca" />
+            <TableColumn fx:id="litro_col" prefWidth="195.33331298828125" text="Litragem" />
+        </columns>
+      </TableView>
+      <Separator layoutX="495.0" layoutY="78.0" orientation="VERTICAL" prefHeight="583.0" prefWidth="11.0" />
+      <Separator layoutX="20.0" layoutY="518.0" prefHeight="0.0" prefWidth="469.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#007eff" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+   </children>
+</AnchorPane>

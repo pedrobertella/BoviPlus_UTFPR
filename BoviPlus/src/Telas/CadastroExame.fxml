@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CadastroExameController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#252525" offset="0.007434944237918215" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TextField fx:id="codigo_tx" layoutX="172.0" layoutY="79.0" onAction="#carregaExame" prefHeight="42.0" prefWidth="236.0" promptText="0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button fx:id="carregar_bt" layoutX="415.0" layoutY="79.0" mnemonicParsing="false" onAction="#carregaExame" prefHeight="42.0" prefWidth="100.0" text="Carregar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="listexames_bt" layoutX="525.0" layoutY="79.0" mnemonicParsing="false" onAction="#listExames" prefHeight="42.0" prefWidth="34.0" style="-fx-body-color: #353535;">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/list.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="nome_tx" layoutX="172.0" layoutY="135.0" prefHeight="42.0" prefWidth="236.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="descricao_tx" alignment="TOP_LEFT" layoutX="172.0" layoutY="200.0" prefHeight="310.0" prefWidth="353.0" promptText="Máximo 300 caracteres...">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="data_pk" layoutX="172.0" layoutY="537.0" prefHeight="42.0" prefWidth="174.0" promptText="00/00/0000" />
+      <Label fx:id="titulo_tela" layoutX="94.0" layoutY="10.0" text="Cadastro de exames" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="icone_img" fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/saude.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="codigo_label" layoutX="24.0" layoutY="79.0" text="Código">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="descricao_label" layoutX="24.0" layoutY="194.0" prefHeight="53.0" prefWidth="152.0" text="Descrição" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="nome_label" layoutX="24.0" layoutY="135.0" text="Nome">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="data_label" layoutX="24.0" layoutY="532.0" prefHeight="53.0" prefWidth="152.0" text="Data" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="categoria_label" layoutX="703.0" layoutY="79.0" prefHeight="53.0" prefWidth="152.0" text="Categoria" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="44.0" layoutX="604.0" layoutY="141.0" stroke="#bfbfbf" strokeType="INSIDE" strokeWidth="2.0" width="353.0" />
+      <Label fx:id="intervalo_label" disable="true" layoutX="674.0" layoutY="201.0" text="Intervalo(Dias)">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="datahoje_bt" layoutX="356.0" layoutY="539.0" mnemonicParsing="false" onAction="#hojeDataCad" onMouseClicked="#alteracao" prefHeight="39.0" prefWidth="82.0" text="Hoje">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="ontem_bt" layoutX="443.0" layoutY="539.0" mnemonicParsing="false" onAction="#ontemDataCad" onMouseClicked="#alteracao" prefHeight="39.0" prefWidth="82.0" text="Ontem">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="esporadico_rbt" layoutX="643.0" layoutY="150.0" mnemonicParsing="false" onAction="#habilitaCampos" text="Esporádico">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="categoria" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="periodico_rbt" layoutX="802.0" layoutY="150.0" mnemonicParsing="false" onAction="#habilitaCampos" text="Periódico" toggleGroup="$categoria">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="intervalo_tx" disable="true" layoutX="661.0" layoutY="257.0" prefHeight="42.0" prefWidth="236.0" promptText="0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Label fx:id="codigo_animal_label" layoutX="659.0" layoutY="478.0" text="Código animal">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="tipo_label" layoutX="692.0" layoutY="338.0" prefHeight="53.0" prefWidth="174.0" text="Tipo cadastro" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="44.0" layoutX="604.0" layoutY="400.0" stroke="#bfbfbf" strokeType="INSIDE" strokeWidth="2.0" width="353.0" />
+      <RadioButton fx:id="individual_rbt" layoutX="648.0" layoutY="409.0" mnemonicParsing="false" text="Individual">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="tipo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="grupo_rbt" disable="true" layoutX="802.0" layoutY="409.0" mnemonicParsing="false" text="Grupo" toggleGroup="$tipo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="codigo_animal_tx" layoutX="640.0" layoutY="518.0" onAction="#selecionaAnimal" prefHeight="42.0" prefWidth="236.0" promptText="0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button fx:id="carregar_animal_bt" layoutX="884.0" layoutY="518.0" mnemonicParsing="false" onAction="#selecionaAnimal" prefHeight="42.0" prefWidth="100.0" text="Carregar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <ButtonBar fx:id="barradebotoes" layoutX="332.0" layoutY="622.0" prefHeight="42.0" prefWidth="371.0">
+         <buttons>
+            <Button fx:id="salvar_bt" mnemonicParsing="false" onAction="#salvaExame" prefHeight="42.0" prefWidth="112.0" text="Salvar">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="limpar_bt" mnemonicParsing="false" onAction="#limpaTela" prefHeight="42.0" prefWidth="112.0" text="Limpar">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="excluir_bt" mnemonicParsing="false" onAction="#apagaExame" prefHeight="42.0" prefWidth="112.0" text="Excluir">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+      <Separator layoutX="568.0" layoutY="79.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="4.0" />
+      <Separator layoutX="19.0" layoutY="605.0" prefHeight="8.0" prefWidth="962.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2f4f" height="675.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <Label fx:id="nome_lb" alignment="CENTER" contentDisplay="CENTER" layoutX="641.0" layoutY="566.0" prefHeight="39.0" prefWidth="236.0" style="-fx-border-color: #000;" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

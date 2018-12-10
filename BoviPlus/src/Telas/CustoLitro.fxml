@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="Telas.CustoLitroController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#50b847" height="646.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/conta.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="10.0" text="Custo por Litro" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <LineChart fx:id="grafico" layoutX="40.0" layoutY="87.0" prefHeight="400.0" prefWidth="940.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xaxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yaxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <TextField fx:id="alim_tx" alignment="CENTER" editable="false" layoutX="240.0" layoutY="498.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="saude_tx" alignment="CENTER" editable="false" layoutX="240.0" layoutY="543.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="ctotal_tx" alignment="CENTER" editable="false" layoutX="240.0" layoutY="589.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="venda_tx" alignment="CENTER" editable="false" layoutX="704.0" layoutY="498.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="custo_tx" alignment="CENTER" editable="false" layoutX="704.0" layoutY="544.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="lucro_tx" alignment="CENTER" editable="false" layoutX="704.0" layoutY="589.0" prefHeight="30.0" prefWidth="136.0" promptText="00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="158.0" layoutY="500.0" text="Alimento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="182.0" layoutY="545.0" text="Saúde">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="591.0" text="Custo total">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="580.0" layoutY="500.0" text="Valor de venda">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="546.0" layoutY="545.0" text="Custo de produção">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="654.0" layoutY="591.0" text="Lucro">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

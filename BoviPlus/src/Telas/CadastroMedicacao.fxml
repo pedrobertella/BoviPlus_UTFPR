@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="tabpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CadastroMedicacaoController">
+  <tabs>
+    <Tab fx:id="medicamento_tab" closable="false" style="-fx-pref-width: 250;" text="Medicamento">
+      <content>
+        <AnchorPane fx:id="medicamento_pane" minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="1000.0" />
+      </content>
+    </Tab>
+      <Tab fx:id="vacina_tab" closable="false" style="-fx-pref-width: 250;" text="Vacina">
+         <content>
+            <AnchorPane fx:id="vacina_pane" prefHeight="200.0" prefWidth="200.0" />
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

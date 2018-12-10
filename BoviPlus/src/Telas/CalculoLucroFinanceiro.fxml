@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.CalculoLucroFinanceiroController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#252525" />
+                  <Stop color="#393939" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#50b847" height="646.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="15.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/conta.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="10.0" text="Rendimentos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="inicio_dp" layoutX="85.0" layoutY="98.0" prefHeight="35.0" prefWidth="150.0" />
+      <Button fx:id="dias15_bt" layoutX="85.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias15" prefHeight="28.0" prefWidth="50.0" text="15" />
+      <Button fx:id="dias30_bt" layoutX="135.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias30" prefHeight="28.0" prefWidth="50.0" text="30" />
+      <Button fx:id="dias60_bt" layoutX="185.0" layoutY="133.0" mnemonicParsing="false" onAction="#dias60" prefHeight="28.0" prefWidth="50.0" text="60" />
+      <DatePicker fx:id="fim_dp" layoutX="85.0" layoutY="173.0" prefHeight="35.0" prefWidth="150.0" />
+      <Button fx:id="hoje_bt" layoutX="85.0" layoutY="206.0" mnemonicParsing="false" onAction="#hjdp" prefHeight="28.0" prefWidth="150.0" text="Hoje" />
+      <Separator layoutX="250.0" layoutY="81.0" orientation="VERTICAL" prefHeight="561.0" prefWidth="21.0" />
+      <Label layoutX="23.0" layoutY="102.0" text="Início">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="177.0" text="Fim">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="310.0" text="Contas a pagar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="454.0" text="Contas a receber">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="ptodos_rbt" layoutX="44.0" layoutY="345.0" mnemonicParsing="false" selected="true" text="Todos">
+         <toggleGroup>
+            <ToggleGroup fx:id="pagargrupo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="preprod_rbt" layoutX="44.0" layoutY="364.0" mnemonicParsing="false" text="Reprodução" toggleGroup="$pagargrupo" />
+      <RadioButton fx:id="palim_rbt" layoutX="44.0" layoutY="383.0" mnemonicParsing="false" text="Alimento" toggleGroup="$pagargrupo" />
+      <RadioButton fx:id="psaude_rbt" layoutX="44.0" layoutY="402.0" mnemonicParsing="false" text="Saúde" toggleGroup="$pagargrupo" />
+      <RadioButton fx:id="pgeral_rbt" layoutX="44.0" layoutY="421.0" mnemonicParsing="false" text="Outros" toggleGroup="$pagargrupo" />
+      <RadioButton fx:id="rtodos_rbt" layoutX="44.0" layoutY="489.0" mnemonicParsing="false" selected="true" text="Todos">
+         <toggleGroup>
+            <ToggleGroup fx:id="recebegrupo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rprod_rbt" layoutX="44.0" layoutY="508.0" mnemonicParsing="false" text="Produção" toggleGroup="$recebegrupo" />
+      <RadioButton fx:id="rgeral_rbt" layoutX="44.0" layoutY="527.0" mnemonicParsing="false" text="Outros" toggleGroup="$recebegrupo" />
+      <Button fx:id="carregar_bt" layoutX="88.0" layoutY="581.0" mnemonicParsing="false" onAction="#buscar" prefHeight="39.0" prefWidth="95.0" text="Carregar">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <BarChart fx:id="grafico" layoutX="271.0" layoutY="80.0" prefHeight="552.0" prefWidth="428.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xaxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yaxis" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <TextField fx:id="gastos_tx" alignment="CENTER" editable="false" layoutX="779.0" layoutY="146.0" prefHeight="30.0" prefWidth="150.0" promptText="R$ 00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="rend_tx" alignment="CENTER" editable="false" layoutX="778.0" layoutY="205.0" prefHeight="30.0" prefWidth="150.0" promptText="R$ 00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="lucro_tx" alignment="CENTER" editable="false" layoutX="778.0" layoutY="278.0" prefHeight="30.0" prefWidth="150.0" promptText="R$ 00.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="826.0" layoutY="118.0" text="Gastos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="801.0" layoutY="177.0" text="Rendimentos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="773.0" layoutY="250.0" text="Receita no período">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="38.0" layoutY="249.0" mnemonicParsing="false" onAction="#esteMes" prefHeight="28.0" prefWidth="95.0" text="Este Mês" />
+      <Button layoutX="140.0" layoutY="249.0" mnemonicParsing="false" onAction="#mesAnterior" prefHeight="28.0" prefWidth="95.0" text="Mês Anterior" />
+      <Button layoutX="38.0" layoutY="279.0" mnemonicParsing="false" onAction="#ultimos90" prefHeight="28.0" prefWidth="95.0" text="Últimos 90 dias">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="140.0" layoutY="279.0" mnemonicParsing="false" onAction="#ultimos6" prefHeight="28.0" prefWidth="95.0" text="Últimos 6 Meses">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
